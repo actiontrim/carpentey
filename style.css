@@ -1,0 +1,681 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+  }
+  header {
+    background: #6a0dad;
+    color: white;
+    padding: 1rem 0;
+  }
+  .container {
+    width: 90%;
+    margin: auto;
+    max-width: 1200px;
+  }
+  nav a {
+    color: white;
+    margin-right: 15px;
+    text-decoration: none;
+  }
+  section {
+    padding: 1rem 0;
+  }
+  #map {
+    height: 500px;
+    width: 100%;
+  }
+  .search-filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  .search-filters input,
+  .search-filters select,
+  .search-filters button {
+    padding: 10px;
+    font-size: 1rem;
+  }
+  footer {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #f4f4f4;
+  }
+  body {
+    font-family: 'Poppins', sans-serif; /* Use Poppins font */
+    margin: 0;
+    padding: 0;
+    color: #333; /* Dark text color */
+    background-color: #f4f4f4; /* Light background */
+}
+
+.container {
+    max-width: 960px; /* Set a maximum width for content */
+    margin: 0 auto; /* Center the content */
+    padding: 20px;
+}
+
+header {
+    background-color: #6a0dad; 
+    color: #f4f4f4;
+    padding: 20px 0; /* Add vertical padding */
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header nav a {
+    color: #f4f4f4;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+header nav a:hover {
+    color: #bbdefb; 
+}
+
+
+#hero {
+    background-image: url("woodworking_image.jpg"); /* Replace with your image */
+    background-size: cover;
+    background-position: center;
+    color: #f4f4f4;
+    text-align: center;
+    padding: 150px 0; /* Increased padding */
+}
+
+#hero h2 {
+     color: #6a0dad;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+#hero p {
+    color: #6a0dad;
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+#hero button {
+    background-color: #6a0dad;
+    color: #f4f4f4;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#hero button:hover {
+    background-color: #000000; 
+}
+
+#find-carpenter, #post-project {
+    padding: 40px 0; /* Increased padding */
+}
+
+#find-carpenter h2, #post-project h2 {
+    color: #6a0dad; 
+    margin-bottom: 20px;
+}
+
+#search-input, #project-title, #project-description {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box; /* Include padding in width */
+}
+
+#project-description {
+    height: 120px; /* Set a height for the textarea */
+}
+
+#project-form button {
+    background-color: #6a0dad; 
+    color: #f4f4f4;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#project-form button:hover {
+    background-color: #6a0dad;
+}
+
+#carpenter-results {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    grid-gap: 20px;
+}
+
+
+#carpenter-results h3 {
+    color: #6a0dad;
+    margin-top: 0;
+}
+
+footer {
+    background-color: #ffffff; 
+    color: #6a0dad;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer .container {
+    padding: 0; /* Remove padding from footer container */
+}
+/* style.css */
+
+/* ... other styles ... */
+
+/* Search Button Styles */
+#search-button,  /* Target both search buttons if you have more than one */
+#hero-search-button { /* specifically for the hero search button */
+    background-color: #6a0dad; 
+    color: #f4f4f4; /* White text */
+    padding: 10px 20px; /* Adjust padding as needed */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Make it look clickable */
+    font-family: 'Poppins', sans-serif; /* Use Poppins font */
+    font-weight: 500; /* Slightly bolder text */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+#search-button:hover,
+#hero-search-button:hover {
+    background-color: #6a0dad; 
+}
+
+/* Optional: Add a focus style */
+#search-button:focus,
+#hero-search-button:focus {
+    outline: none; /* Remove default outline on focus */
+    box-shadow: 0 0 5px rgba(103, 58, 183, 0.5); /* Add a subtle shadow on focus */
+}
+
+/* ... other styles ... */
+post project
+.project {
+    border: 1px solid #ccc;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#post-a-project {
+    padding: 40px 0;
+    background-color: #f4f4f4;
+    display: none; /* Initially hidden */
+}
+
+#post-a-project .container {
+    max-width: 600px;
+}
+
+#post-a-project h2 {
+    color: #6a0dad;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#project-form fieldset {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+#project-form legend {
+    font-weight: bold;
+    padding: 5px 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#project-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+#project-form input[type="text"],
+#project-form select,
+#project-form textarea,
+#project-form input[type="email"],
+#project-form input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#project-form textarea {
+    height: 150px;
+}
+
+#project-form input[type="file"] {
+    margin-bottom: 15px;
+}
+
+#project-form button {
+    background-color: #6a0dad;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#project-form button:hover {
+    background-color: #6a0dad;
+}
+
+#posted-projects {
+    margin-top: 40px;
+}
+
+#posted-projects h2 {
+    text-align: center;
+    color: #6a0dad;
+    margin-bottom: 30px;
+}
+
+.project {
+    margin-bottom: 20px;
+}
+
+#post-button { /* Target the button by its ID */
+    background-color: #6a0dad;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%; /* Make it full width */
+    display: block; /* Added to center button */
+    margin: 20px auto; /* Added to center button and add margin*/
+}
+
+#post-button:hover {
+    background-color: #5c0cb0;
+}
+  /* style.css (Additions/Modifications) */
+find carpenters 
+  #find-a-carpenter {
+    padding: 40px 0;
+    background-color: #f4f4f4;
+}
+
+#find-a-carpenter .container {
+    max-width: 960px; /* Adjust as needed */
+}
+
+#find-a-carpenter h2 {
+    color: #6a0dad;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.search-filters {
+    display: flex;
+    flex-wrap: nowrap;         /* Prevent wrapping */
+    gap: 10px;
+    margin-bottom: 20px;
+    align-items: center;       /* Vertically align items */
+  }
+  
+  .search-filters input,
+  .search-filters select,
+  .search-filters button {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    flex: 1;                   /* Allow inputs and select to grow */
+    min-width: 0;              /* Prevent overflow */
+  }
+  
+  .search-filters button {
+    flex: 0 0 auto;            /* Prevent button from growing */
+    width: auto;               /* Allow natural width */
+    background-color: #6a0dad;
+    color: #f4f4f4;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+
+.search-filters button:hover {
+    background-color: #6a0dad;
+}
+
+#carpenter-results {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    grid-gap: 20px;
+}
+
+#carpenter-results .carpenter-profile { /* Add a class to the profile container */
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #f4f4f4;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+#carpenter-results .carpenter-profile img {
+    max-width: 100px;
+    height: auto;
+    border-radius: 50%; /* Make image circular */
+    float: left; /* Float image to the left */
+    margin-right: 15px;
+}
+
+#carpenter-results .carpenter-profile h3 {
+    color: #6a0dad;
+    margin-top: 0;
+}
+
+/* Responsive adjustments (if needed) */
+@media (max-width: 768px) {
+    .search-filters {
+        flex-direction: column; /* end of find carpenters style */
+    }
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    background-color: #6a0dad;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+button:hover {
+    background-color: #5c0cb0;
+}
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+fieldset {
+    border: none;
+    margin-bottom: 15px;
+}
+/* POPPINS FONT */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+*{  
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background: url("images/1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 110vh;
+    background: rgba(39, 39, 39, 0.4);
+}
+.nav{
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    background: linear-gradient(rgba(39,39,39, 0.6), transparent);
+    z-index: 100;
+}
+.nav-logo p{
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
+}
+.nav-menu ul{
+    display: flex;
+}
+.nav-menu ul li{
+    list-style-type: none;
+}
+.nav-menu ul li .link{
+    text-decoration: none;
+    font-weight: 500;
+    color: #fff;
+    padding-bottom: 15px;
+    margin: 0 25px;
+}
+.link:hover, .active{
+    border-bottom: 2px solid #fff;
+}
+.nav-button .btn{
+    width: 130px;
+    height: 40px;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.4);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .3s ease;
+}
+.btn:hover{
+    background: rgba(255, 255, 255, 0.3);
+}
+#registerBtn{
+    margin-left: 15px;
+}
+.btn.white-btn{
+    background: rgba(255, 255, 255, 0.7);
+}
+.btn.btn.white-btn:hover{
+    background: rgba(255, 255, 255, 0.5);
+}
+.nav-menu-btn{
+    display: none;
+}
+.form-box{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 512px;
+    height: 420px;
+    overflow: hidden;
+    z-index: 2;
+}
+.login-container{
+    position: absolute;
+    left: 4px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    transition: .5s ease-in-out;
+}
+.register-container{
+    position: absolute;
+    right: -520px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    transition: .5s ease-in-out;
+}
+.top span{
+    color: #fff;
+    font-size: small;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+}
+.top span a{
+    font-weight: 500;
+    color: #fff;
+    margin-left: 5px;
+}
+header{
+    color: #fff;
+    font-size: 30px;
+    text-align: center;
+    padding: 10px 0 30px 0;
+}
+.two-forms{
+    display: flex;
+    gap: 10px;
+}
+.input-field{
+    font-size: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    height: 50px;
+    width: 100%;
+    padding: 0 10px 0 45px;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    transition: .2s ease;
+}
+.input-field:hover, .input-field:focus{
+    background: rgba(255, 255, 255, 0.25);
+}
+::-webkit-input-placeholder{
+    color: #fff;
+}
+.input-box i{
+    position: relative;
+    top: -35px;
+    left: 17px;
+    color: #fff;
+}
+.submit{
+    font-size: 15px;
+    font-weight: 500;
+    color: black;
+    height: 45px;
+    width: 100%;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+.submit:hover{
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.2);
+}
+.two-col{
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    font-size: small;
+    margin-top: 10px;
+}
+.two-col .one{
+    display: flex;
+    gap: 5px;
+}
+.two label a{
+    text-decoration: none;
+    color: #fff;
+}
+.two label a:hover{
+    text-decoration: underline;
+}
+@media only screen and (max-width: 786px){
+    .nav-button{
+        display: none;
+    }
+    .nav-menu.responsive{
+        top: 100px;
+    }
+    .nav-menu{
+        position: absolute;
+        top: -800px;
+        display: flex;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.2);
+        width: 100%;
+        height: 90vh;
+        backdrop-filter: blur(20px);
+        transition: .3s;
+    }
+    .nav-menu ul{
+        flex-direction: column;
+        text-align: center;
+    }
+    .nav-menu-btn{
+        display: block;
+    }
+    .nav-menu-btn i{
+        font-size: 25px;
+        color: #fff;
+        padding: 10px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        cursor: pointer;
+        transition: .3s;
+    }
+    .nav-menu-btn i:hover{
+        background: rgba(255, 255, 255, 0.15);
+    }
+}
+@media only screen and (max-width: 540px) {
+    .wrapper{
+        min-height: 100vh;
+    }
+    .form-box{
+        width: 100%;
+        height: 500px;
+    }
+    .register-container, .login-container{
+        width: 100%;
+        padding: 0 20px;
+    }
+    .register-container .two-forms{
+        flex-direction: column;
+        gap: 0;
+    }
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Carpentey</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    header {
+  background: linear-gradient(to right, #6a0dad, #9b30ff);
+  color: #fff;
+  padding: 20px 0;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+nav {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive behavior: stack links on small screens */
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav a {
+    width: 100%;
+    padding: 10px 0;
+  }
+}
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+
+    button {
+        background-color: #6a0dad;
+        color: #f4f4f4;
+        padding: 12px 25px;
+        border: none;
+        border-radius: 5px;
+        font-size: 1em;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        width: 100%;
+    }
+    button:hover {
+        background-color: #5c0cb0;
+    }
+    input, select, textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0 15px;
+        border: 1px solid #f4f4f4;
+        border-radius: 5px;
+    }
+    fieldset {
+        border: none;
+        margin-bottom: 15px;
+    }
+</style>
+<body>
+
+  <!-- Header: Only for site title or navigation -->
+  <header>
+    <div class="container">
+      <h1>Carpentey</h1>
+      <nav>
+        <a href="index.html">Find Carpenters</a>
+        <a href="postproject.html">Post Projects</a>
+        <a href="forcarpenters.html">For Carpenters</a>
+      </nav>
+    </div>
+  </header>
+
+
+  <div class="container">
+    <h1>Thank You!</h1>
+    <p>
+        Someone Will Contact You Soon.
+    </p>
+
+    
+  <footer>
+    <p>&copy; All rights reserved 2025 Carpentey Inc.</p>
+  </footer>
+</body>
+</html>

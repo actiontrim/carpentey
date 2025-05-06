@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Carpentey</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Ensure body is scrollable */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      overflow-y: auto; /* Allow vertical scrolling */
+      min-height: 100vh; /* Ensure the body takes at least the full height of the viewport */
+    }
+  
+    header {
+      background: linear-gradient(to right, #6a0dad, #9b30ff);
+      color: #fff;
+      padding: 20px 0;
+    }
+  
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+  
+    nav {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+  
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+  
+    nav a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+  
+    /* Responsive behavior: stack links on small screens */
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+  
+      nav a {
+        width: 100%;
+        padding: 10px 0;
+      }
+    }
+  
+    button {
+      background-color: #6a0dad;
+      color: #f4f4f4;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      width: 100%;
+    }
+  
+    button:hover {
+      background-color: #5c0cb0;
+    }
+  
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0 15px;
+      border: 1px solid #f4f4f4;
+      border-radius: 5px;
+    }
+  
+    fieldset {
+      border: none;
+      margin-bottom: 15px;
+    }
+  
+    /* Set a fixed height for the map so it's scrollable when content overflows */
+    #map {
+      height: 400px; /* Adjust based on your design */
+      width: 100%;
+    }
+  </style>
+  
+<body>
+
+<header>
+  <div class="container">
+    <h1>Carpentey</h1>
+    <nav>
+      <a href="index.html">Find Carpenters</a>
+      <a href="postproject.html">Post Projects</a>
+      <a href="forcarpenters.html">For Carpenters</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Search Section -->
+<section id="find-a-carpenter">
+  <div class="container">
+    <h2>Find a Carpenter</h2>
+    <div class="search-filters">
+      <input type="text" id="search-location" placeholder="Location (City or Zip)" />
+      <select id="search-category">
+        <option value="">Select a trade</option>
+        <option value="carpentry">Carpentry</option>
+        <option value="cabinetry">Cabinetry</option>
+        <option value="excavation">Excavation</option>
+        <option value="foundation">Foundation</option>
+        <option value="framing">Framing</option>
+        <option value="roofing">Roofing</option>
+        <option value="siding">Siding</option>
+        <option value="masonry">Masonry</option>
+        <option value="windows">Window Installation</option>
+        <option value="plumbing">Plumbing</option>
+        <option value="electrical">Electrical</option>
+        <option value="hvac">HVAC</option>
+        <option value="insulation">Insulation</option>
+        <option value="drywall">Drywall</option>
+        <option value="flooring">Flooring</option>
+        <option value="painting">Painting</option>
+        <option value="tile_setting">Tile Setting</option>
+        <option value="countertop_installation">Countertop Installation</option>
+        <option value="landscaping">Landscaping</option>
+        <option value="finish">Final Cleaning/Finish</option>
+        <option value="other">Other</option>
+      </select>
+      <button id="search-button">Search</button>
+    </div>
+  </div>
+</section>
+
+<!-- Google Map -->
+<div id="map"></div>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; All rights reserved 2025 Carpentey Inc.</p>
+</footer>
+
+<!-- JavaScript -->
+<script>
+  let map;
+  let marker;
+  let infoWindow;
+
+  function initMap() {
+    const caldwellCoords = { lat: 43.6608, lng: -116.6905 };
+
+    map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: 44.0682, lng: -114.7420 }, // Centered on Idaho
+    zoom: 5, // Closer view of Idaho
+    });
+
+    const contentString = `
+<div style="
+  font-family: Poppins, sans-serif;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 0px 20px;
+  max-width: 90%;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 20px auto;
+  line-height: 1.6;
+  position: relative; /* Makes the parent container a reference for absolute positioning */
+">
+  <!-- Google Icon (outside the inner box but inside the outer popup box) -->
+  <div style="position: absolute; top: -30px; left: -25px; opacity: 1.0; z-index: 10;">
+    <img src="google%20icon.svg" alt="Google Icon" style="width: 48px; height: 48px;">
+  </div>
+
+  <!-- Content Box -->
+  <div style="position: relative; padding-top: 0px;"> <!-- Adjust padding to avoid overlap with icon -->
+    <h3 style="margin: 0 0 8px; font-size: 1.25rem; color: #202124;">
+      Action Trim Carpentry LLC
+    </h3>
+
+    <p style="margin: 0; color: #5f6368;">📍 Caldwell, ID</p>
+    <p style="margin: 4px 0 0; color: #5f6368;">📞 208-337-1232</p>
+    <p style="margin: 4px 0 0;">
+      <a href="https://www.trimcarpentry.com" target="_blank" style="color: #1a73e8; text-decoration: none;">
+        🌐 www.trimcarpentry.com
+      </a>
+    </p>
+  </div>
+</div>
+
+    `;
+
+    infoWindow = new google.maps.InfoWindow({
+      content: contentString,
+    });
+
+    marker = new google.maps.Marker({
+      position: caldwellCoords,
+      map: map,
+      title: "Action Trim Carpentry LLC",
+    });
+
+    marker.addListener("click", () => {
+      infoWindow.open(map, marker);
+    });
+  }
+
+  function handleSearch() {
+    const location = document.getElementById("search-location").value;
+    const category = document.getElementById("search-category").value;
+    const geocoder = new google.maps.Geocoder();
+
+    if (!location) {
+      alert("Please enter a location.");
+      return;
+    }
+
+    geocoder.geocode({ address: location }, (results, status) => {
+      if (status === "OK") {
+        const newLoc = results[0].geometry.location;
+        map.setCenter(newLoc);
+        marker.setPosition(newLoc);
+        map.setZoom(8); // Focus on searched location
+        infoWindow.close(); // Close popup
+      } else {
+        alert("Location not found: " + status);
+      }
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("search-button").addEventListener("click", handleSearch);
+  });
+</script>
+
+<!-- Google Maps Script (must come last) -->
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCODy0DYNpGUQOAaaXlvTSdG_7UFeE0mtY&callback=initMap&libraries=places&v=weekly">
+</script>
+
+</body>
+</html>
